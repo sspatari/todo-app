@@ -1,24 +1,10 @@
-# README
+# Simple TODO web application
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Simple implemetation of a todo app that uses rails on the backend and react on the frontend. Heroku is used to run the application.
 
-Things you may want to cover:
+## Run
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+```sh
+rails db:migrate
+heroku local -f Procfile.dev
+```
