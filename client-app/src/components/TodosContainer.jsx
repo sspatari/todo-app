@@ -6,7 +6,8 @@ class TodosContaiter extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      todos: []
+      todos: [],
+      inputValue: ""
     };
   }
 
@@ -32,11 +33,16 @@ class TodosContaiter extends Component {
             $splice: [[0, 0, response.data]]
           });
           this.setState({
-            todos: todos
+            todos: todos,
+            inputValue: ""
           });
         })
         .catch(error => console.log(error));
     }
+  };
+
+  handleChange = e => {
+    this.setState({ inputValue: e.target.value });
   };
 
   render() {
@@ -49,6 +55,8 @@ class TodosContaiter extends Component {
             placeholder="Add a task"
             maxLength="50"
             onKeyPress={this.createTodo}
+            value={this.state.inputValue}
+            onChange={this.handleChange}
           />
         </div>
         <div className="listWrapper">
